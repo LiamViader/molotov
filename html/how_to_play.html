@@ -1,25 +1,69 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="../styles/main.css">
-		<title> How to play </title>
-	</head>
-	<body>
-        <div class="text_com_jugar">
-            <h1> Controls:</h1>
-            <ul>
-                <li>W,A,S,D:                 Move</li>
-                <li>Mouse Right Click:       Shoot</li>
-                <li>Space:                   Dash</li>
-                <li>E:                       Interact (cars or objects on the floor)</li>
-                <li>P:                       Pause</li>
+
+<head>
+    <link rel="stylesheet" href="../styles/main.css">
+    <title> How to play </title>
+    <link rel="icon" type="image/svg+xml" href="../resources/logo.svg">
+</head>
+
+<body>
+    <main class="main-container" style="max-width: 800px;">
+        <h2 class="game-title" style="font-size: 3rem; margin-bottom: 2rem;">HOW TO PLAY</h2>
+
+        <div
+            style="background: rgba(13, 17, 23, 0.95); padding: 2rem; border: 1px solid #30363d; text-align: left; margin-bottom: 2rem; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+            <h3 style="color: #eb631b; margin-bottom: 1rem; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem;">
+                CONTROLS</h3>
+            <ul style="list-style: none; padding: 0; display: grid; gap: 0.5rem;">
+                <li
+                    style="display: flex; justify-content: space-between; border-bottom: 1px dashed #30363d; padding-bottom: 0.2rem;">
+                    <span style="color: #eb631b; font-weight: bold;">W, A, S, D</span>
+                    <span>MOVE</span>
+                </li>
+                <li
+                    style="display: flex; justify-content: space-between; border-bottom: 1px dashed #30363d; padding-bottom: 0.2rem;">
+                    <span style="color: #eb631b; font-weight: bold;">MOUSE RIGHT CLICK</span>
+                    <span>SHOOT</span>
+                </li>
+                <li
+                    style="display: flex; justify-content: space-between; border-bottom: 1px dashed #30363d; padding-bottom: 0.2rem;">
+                    <span style="color: #eb631b; font-weight: bold;">R</span>
+                    <span>RELOAD</span>
+                </li>
+                <li
+                    style="display: flex; justify-content: space-between; border-bottom: 1px dashed #30363d; padding-bottom: 0.2rem;">
+                    <span style="color: #eb631b; font-weight: bold;">SPACE</span>
+                    <span>DASH</span>
+                </li>
+                <li
+                    style="display: flex; justify-content: space-between; border-bottom: 1px dashed #30363d; padding-bottom: 0.2rem;">
+                    <span style="color: #eb631b; font-weight: bold;">E</span>
+                    <span>INTERACT (Refill Gas, pick up items, etc.)</span>
+                </li>
+                <li
+                    style="display: flex; justify-content: space-between; border-bottom: 1px dashed #30363d; padding-bottom: 0.2rem;">
+                    <span style="color: #eb631b; font-weight: bold;">P</span>
+                    <span>PAUSE</span>
+                </li>
             </ul>
-            <h1> Objective:</h1>
-            <p>Try to fill as much as you can your car (orange) gas tank with the other cars gas. 4 types of diferent enemys will try to kill you. Shoot them before you die.</p>
+
+            <h3
+                style="color: #eb631b; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem;">
+                OBJECTIVE</h3>
+            <p style="line-height: 1.6; color: #8b949e;">
+                Try to fill your car's (orange) gas tank by scavenging fuel from abandoned cars.
+                <br><br>
+                Survive against <strong style="color: #e6edf3;">4 different types of enemies</strong> that will try to
+                stop you.
+                <br><br>
+                Shoot them before they get you!
+            </p>
         </div>
-        <div class="peu">
-		    <a class="menu-object" id="exit" href="../index.html">Exit</a>
-        </div>
-	</body>
+
+        <a class="menu-btn" href="../index.html"
+            style="text-decoration: none; display: block; text-align: center; max-width: 200px; margin: 0 auto;">BACK</a>
+    </main>
+</body>
 
 </html>

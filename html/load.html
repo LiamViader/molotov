@@ -1,22 +1,33 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="../styles/main.css">
-        <script src="./js/main_menu.js"></script>
-		<title> Load Game </title>
-	</head>
-	<body>
-		<div id="saves_id">
-			<p class="menu-object" id="title">Save files</p>
-			<div v-for="(save, indx) in saves">
-				<button class="menu-object" v-on:click="load(indx)"> 
-					{{save.nom}} 
+
+<head>
+	<link rel="stylesheet" href="../styles/main.css">
+	<script src="../js/main_menu.js"></script>
+	<title> Load Game </title>
+	<link rel="icon" type="image/svg+xml" href="../resources/logo.svg">
+</head>
+
+<body>
+	<main class="main-container">
+		<h2 class="game-title" style="font-size: 3rem; margin-bottom: 2rem;">SAVE FILES</h2>
+
+		<div id="saves_id" class="menu-nav">
+			<div v-for="(save, indx) in saves" style="width: 100%; display: flex; justify-content: center;">
+				<button class="menu-btn" v-on:click="load(indx)">
+					{{save.nom}}
 				</button>
 			</div>
+			<div v-if="saves.length === 0" style="color: #8b949e; margin-bottom: 1rem;">NO SAVES FOUND</div>
 		</div>
-		<a class="menu-object" id="exit" href="../index.html">Exit</a>
-	</body>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-	<script src="../js/load.js"></script>
-</html>
 
+		<div class="menu-nav" style="margin-top: 2rem;">
+			<a class="menu-btn" id="exit" href="../index.html"
+				style="text-decoration: none; display: block; text-align: center;">BACK</a>
+		</div>
+	</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script src="../js/load.js"></script>
+
+</html>

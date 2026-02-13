@@ -1,139 +1,244 @@
-*, html {
-    margin:0;
-    padding:0;  
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(160, 163, 163);
+body {
+    background-color: #0d1117;
+    /* Dark background */
+    color: #e6edf3;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    /* Tech/Gamer font */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(235, 99, 27, 0.1) 0%, transparent 60%),
+        linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.9)),
+        url('../resources/logo.svg');
+    /* Subtle background texture if needed, using logo for now */
+    background-size: cover, cover, 50px 50px;
+    background-repeat: no-repeat, no-repeat, repeat;
 }
 
-#title{
+.main-container {
     text-align: center;
-	margin-top: 50px;
-    margin-bottom: 50px;
-	font-size: 35px;
-    height: 60px;
-	line-height: 60px;
-    color: rgb(13, 19, 29);;
-    background-color: rgb(84,93,109);
-    font-family: Serif;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    z-index: 10;
 }
 
-.menu-object{
-    color: rgb(176, 184, 185);
-    display:block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 300px;
-	height: 75px;
-	font-size: 20px;
-	margin-top: 30px;
-    background-color: rgb(24,34,53);
-    font-family: 'Courier New', monospace;
+/* Logo Section */
+.logo-container {
+    margin-bottom: 3rem;
+    animation: float 6s ease-in-out infinite;
 }
 
-button.menu-object:active{
-	font-size: 18px;
-	width: 275px;
-	height: 70px;
-	background-color: rgb(16, 22, 34);
+.game-logo {
+    width: 150px;
+    height: 150px;
+    filter: drop-shadow(0 0 15px rgba(235, 99, 27, 0.6));
 }
 
-button.menu-object:hover:not(:active){
-	font-size: 22px;
-	width: 325px;
-	height: 85px;
-	background-color: rgb(35, 50, 77);
-}
-.menu{
-    height: 500px;
-    width: 400px;
-    background-color: rgb(84,93,109);
-    border: 8px solid rgb(207, 205, 205);
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 70px;
+.game-title {
+    font-size: 4rem;
+    margin-top: 1rem;
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow:
+        0 0 10px rgba(235, 99, 27, 0.8),
+        0 0 20px rgba(235, 99, 27, 0.4);
 }
 
-.esquerra{
-    background-color: rgb(24,34,53);
-    float: left;
-    height: 850px;
-    width: 300px;
-    margin-left: 0px;
+/* Navigation Menu */
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.dreta{
-    background-color: rgb(24,34,53);
-    float: right;
-    height: 850px;
-    width: 300px;
+.menu-btn {
+    background: transparent;
+    border: 2px solid #656e77;
+    color: #cacfd6;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.peu{
-    margin-top: 100px;
-    background-color: rgb(24,34,53);
-    height: 1000px;
+.menu-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(235, 99, 27, 0.2), transparent);
+    transition: 0.5s;
 }
 
-h1{
+.menu-btn:hover {
+    border-color: #eb631b;
+    /* Molotov Orange */
+    color: #fff;
+    box-shadow: 0 0 15px rgba(235, 99, 27, 0.4);
+    transform: scale(1.05);
+    background-color: rgba(235, 99, 27, 0.1);
+}
+
+.menu-btn:hover::before {
+    left: 100%;
+}
+
+.menu-btn:active {
+    transform: scale(0.98);
+    background-color: rgba(235, 99, 27, 0.2);
+}
+
+/* Footer */
+.footer-info {
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    color: #484f58;
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background-color: rgba(13, 17, 23, 0.95);
+    border: 2px solid #30363d;
+    padding: 3rem;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 10px rgba(235, 99, 27, 0.2);
     text-align: center;
-    background-color: rgb(116,120,124);
-    line-height: 100px;
-    color: rgb(32, 32, 32);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    overflow: hidden;
 }
 
-#game_area{
-    width: 1800px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 40px;
+/* Neon corner accents for modal */
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #eb631b, transparent);
 }
 
-.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    width: 600px;
-}
-
-#exit{
+.modal-input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #30363d;
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
     text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.logosvg{
-    transform: scale(2.5);
-    fill:rgb(106, 128, 128);
+.modal-input:focus {
+    border-color: #eb631b;
+    box-shadow: 0 4px 10px -4px rgba(235, 99, 27, 0.3);
 }
 
-.logosvg:hover{
-    fill:darkslategray;
+.modal-input::placeholder {
+    color: #30363d;
 }
 
-
-.logosvg:hover #flama2{
-    fill: orange;
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.logosvg:hover #flama1{
-    fill: #c3ca00;
+.small-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    width: auto;
+    min-width: 120px;
 }
 
-.logosvg:hover #drap{
-    fill: darkgrey;
+.hidden {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.text_com_jugar{
-    text-align: center;
-    font-size: 20px;
+/* Shake animation for error */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
 }
 
-.text_com_jugar li{
-    margin: 10px;
-}
-
-.text_com_jugar p{
-    margin: 10px;
+.shake {
+    animation: shake 0.5s;
+    border-color: #ff3333 !important;
+    color: #ff3333 !important;
 }

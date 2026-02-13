@@ -17,6 +17,7 @@ In a hostile urban environment, your mission is to survive and escape. Scavenge 
 | --- | --- |
 | **W, A, S, D** | Move |
 | **Mouse Right Click** | Shoot |
+| **R** | Reload |
 | **SPACE** | Dash / Dodge |
 | **E** | Interact (Loot items, siphon gas) |
 | **P** | Pause Game |
